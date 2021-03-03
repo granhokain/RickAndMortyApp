@@ -10,6 +10,23 @@ import Foundation
 struct CharacterResponse: Decodable {
     let info: Info
     let results: [Character]
+
+    init(info: Info, results: [Character]) {
+        self.info = info
+        self.results = results
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case info, results
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        self.info = try container.decode(Info.self, forKey: .info)
+        self.results = try container.decode([Character].self, forKey: .results)
+    }
+
 }
 
 struct CharacterLocation: Decodable {

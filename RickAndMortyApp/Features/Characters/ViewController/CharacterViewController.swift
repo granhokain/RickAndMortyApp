@@ -14,6 +14,11 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var currentPageLabel: UILabel!
     @IBOutlet weak var paginationHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var paginationStackView: UIStackView!
+    @IBOutlet weak var characterTitle: UILabel! {
+        didSet {
+            characterTitle.font = UIFont(name: "Get Schwifty", size: 40.0)
+        }
+    }
 
     let networkManager = NetworkManager()
     var characters = [Character]() {

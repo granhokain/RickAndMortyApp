@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37FDE5E4A802CF7403F3D621 /* Pods_RickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA43238E1DF5F8120ED47AB /* Pods_RickAndMortyApp.framework */; };
+		A465284725F029640092161C /* Get Schwifty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A465284625F029640092161C /* Get Schwifty.ttf */; };
 		A4817A0125EFCF56007EB374 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4817A0025EFCF56007EB374 /* CharacterViewController.swift */; };
 		A4817A0525EFD540007EB374 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4817A0425EFD540007EB374 /* ColorExtension.swift */; };
 		A4817A0925EFD688007EB374 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4817A0825EFD688007EB374 /* CharacterDetailViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		6B07979AFB8C4309CF78E9E0 /* Pods-RickAndMortyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp.release.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp/Pods-RickAndMortyApp.release.xcconfig"; sourceTree = "<group>"; };
 		6CFBFB45BEF1A340C8BE7CBF /* Pods-RickAndMortyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp/Pods-RickAndMortyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A465284625F029640092161C /* Get Schwifty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Get Schwifty.ttf"; sourceTree = "<group>"; };
 		A4817A0025EFCF56007EB374 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		A4817A0425EFD540007EB374 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		A4817A0825EFD688007EB374 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A4817A0425EFD540007EB374 /* ColorExtension.swift */,
+				A465284625F029640092161C /* Get Schwifty.ttf */,
 			);
 			path = "Extensions+Fonts";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4D36E0525EEB02F006966B0 /* LaunchScreen.storyboard in Resources */,
+				A465284725F029640092161C /* Get Schwifty.ttf in Resources */,
 				A4D36E0225EEB02F006966B0 /* Assets.xcassets in Resources */,
 				A4D36DFD25EEB02C006966B0 /* Main.storyboard in Resources */,
 			);
