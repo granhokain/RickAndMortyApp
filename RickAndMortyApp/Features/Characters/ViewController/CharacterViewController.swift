@@ -30,6 +30,8 @@ class CharacterViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
             }
         }
     }
@@ -47,7 +49,6 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.view.backgroundColor = .mainBackgroundColor
         bindViewModel()
         viewModel.getCharacter(name: "", page: "")
     }

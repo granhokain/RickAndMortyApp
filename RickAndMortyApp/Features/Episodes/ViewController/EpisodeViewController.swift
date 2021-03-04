@@ -16,7 +16,7 @@ class EpisodeViewController: UIViewController {
     @IBOutlet weak var paginationStackView: UIStackView!
     @IBOutlet weak var episodeTitle: UILabel! {
         didSet {
-            episodeTitle.font = UIFont(name: "Get Schwifty", size: UIScreen.main.bounds.size.width > 375 ? 40.0: 25.0)
+            episodeTitle.font = UIFont(name: "Get Schwifty", size: UIScreen.main.bounds.size.width > 375 ? 40.0: 26.0)
         }
     }
 
@@ -32,6 +32,8 @@ class EpisodeViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
             }
         }
     }
@@ -50,6 +52,8 @@ class EpisodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = .mainColor
+        tableView.backgroundColor = .mainBackgroundColor
         bindViewModel()
         viewModel.getEpisode(name: "", page: "")
     }

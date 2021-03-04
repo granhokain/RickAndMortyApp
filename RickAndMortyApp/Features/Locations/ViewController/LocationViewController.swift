@@ -31,6 +31,8 @@ class LocationViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
             }
         }
     }
@@ -51,7 +53,6 @@ class LocationViewController: UIViewController {
 
         bindViewModel()
         viewModel.getLocation(name: "", page: "")
-        navigationController?.view.backgroundColor = .mainBackgroundColor
         view.backgroundColor = .mainColor
         tableView.separatorStyle = .none
         tableView.backgroundColor = .mainBackgroundColor

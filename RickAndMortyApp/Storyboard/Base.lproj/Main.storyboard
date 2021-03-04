@@ -263,29 +263,29 @@
                                     <constraint firstAttribute="height" constant="30" id="Y53-oP-DsU"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="episodeBar" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-vB-HSK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="episodeBar" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-vB-HSK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                             </imageView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8r-Hn-Ltk">
-                                <rect key="frame" x="0.0" y="172" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="177" width="375" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episodes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odX-f3-Td8">
-                                <rect key="frame" x="0.0" y="174" width="189" height="38"/>
+                                <rect key="frame" x="0.0" y="179" width="189" height="38"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mBa-hl-FUQ"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.25490196078431371" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MO8-5l-jDj" firstAttribute="top" secondItem="I8r-Hn-Ltk" secondAttribute="bottom" constant="6" id="0cR-bp-Omx"/>
+                            <constraint firstItem="MO8-5l-jDj" firstAttribute="top" secondItem="I8r-Hn-Ltk" secondAttribute="bottom" constant="1" id="0cR-bp-Omx"/>
                             <constraint firstItem="odX-f3-Td8" firstAttribute="leading" secondItem="I8r-Hn-Ltk" secondAttribute="leading" id="1Ff-sJ-W8H"/>
                             <constraint firstItem="CSX-aD-6Od" firstAttribute="bottom" secondItem="mBa-hl-FUQ" secondAttribute="bottom" id="5bK-vv-PKO"/>
                             <constraint firstItem="gjK-vB-HSK" firstAttribute="leading" secondItem="MO8-5l-jDj" secondAttribute="leading" id="BDn-TZ-0jD"/>
-                            <constraint firstItem="odX-f3-Td8" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" constant="174" id="BtW-8e-nH1"/>
-                            <constraint firstItem="I8r-Hn-Ltk" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" constant="172" id="OJQ-du-JUn"/>
+                            <constraint firstItem="odX-f3-Td8" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" constant="179" id="BtW-8e-nH1"/>
+                            <constraint firstItem="I8r-Hn-Ltk" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" constant="177" id="OJQ-du-JUn"/>
                             <constraint firstItem="MO8-5l-jDj" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" constant="218" id="Qbd-lw-hRJ"/>
                             <constraint firstItem="gjK-vB-HSK" firstAttribute="top" secondItem="mBa-hl-FUQ" secondAttribute="top" id="S8D-No-I1A"/>
                             <constraint firstItem="MO8-5l-jDj" firstAttribute="trailing" secondItem="mBa-hl-FUQ" secondAttribute="trailing" id="eK9-ha-fb5"/>
@@ -324,8 +324,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-1H-q6e">
-                                <rect key="frame" x="0.0" y="277" width="375" height="370"/>
+                                <rect key="frame" x="0.0" y="315" width="375" height="310"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="310" id="fZh-WJ-yGL"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="30" id="Jm1-dG-y3D" customClass="EpisodeDetailTableViewCell" customModule="RickAndMortyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="30"/>
@@ -334,11 +337,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kga-fN-wp6">
-                                                    <rect key="frame" x="40" y="0.0" width="295" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="kga-fN-wp6">
+                                                    <rect key="frame" x="30" y="0.0" width="315" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ve3-tw-0ko">
-                                                            <rect key="frame" x="0.0" y="0.0" width="142.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="146.5" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="p3C-kb-dWQ"/>
                                                             </constraints>
@@ -347,7 +350,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OYY-vn-Ao6">
-                                                            <rect key="frame" x="152.5" y="0.0" width="142.5" height="20.5"/>
+                                                            <rect key="frame" x="168.5" y="0.0" width="146.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.4387142658" green="0.80368298289999995" blue="0.090205676849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -357,8 +360,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kga-fN-wp6" firstAttribute="top" secondItem="AOa-2X-Ret" secondAttribute="top" id="Ic2-Yj-s4i"/>
-                                                <constraint firstAttribute="trailing" secondItem="kga-fN-wp6" secondAttribute="trailing" constant="40" id="MSd-hz-0HK"/>
-                                                <constraint firstItem="kga-fN-wp6" firstAttribute="leading" secondItem="AOa-2X-Ret" secondAttribute="leading" constant="40" id="iI3-i0-L16"/>
+                                                <constraint firstAttribute="trailing" secondItem="kga-fN-wp6" secondAttribute="trailing" constant="30" id="MSd-hz-0HK"/>
+                                                <constraint firstItem="kga-fN-wp6" firstAttribute="leading" secondItem="AOa-2X-Ret" secondAttribute="leading" constant="30" id="iI3-i0-L16"/>
                                                 <constraint firstItem="kga-fN-wp6" firstAttribute="height" secondItem="AOa-2X-Ret" secondAttribute="height" id="of7-or-mq0"/>
                                                 <constraint firstAttribute="bottom" secondItem="kga-fN-wp6" secondAttribute="bottom" id="yO8-tC-7zs"/>
                                             </constraints>
@@ -375,19 +378,31 @@
                                     <outlet property="delegate" destination="jk5-gP-LFj" id="OfW-vX-daK"/>
                                 </connections>
                             </tableView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-BR-XHM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
+                                <color key="backgroundColor" red="0.2196078431372549" green="0.25490196078431371" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ywY-iq-eAK"/>
                         <color key="backgroundColor" red="0.19215686269999999" green="0.22352941179999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ywY-iq-eAK" firstAttribute="bottom" secondItem="0bS-1H-q6e" secondAttribute="bottom" id="hgr-h9-UrU"/>
+                            <constraint firstItem="0bS-1H-q6e" firstAttribute="top" secondItem="oVt-BR-XHM" secondAttribute="bottom" constant="8" id="GAS-3H-djx"/>
+                            <constraint firstItem="oVt-BR-XHM" firstAttribute="leading" secondItem="0bS-1H-q6e" secondAttribute="leading" id="PZB-6E-4PB"/>
+                            <constraint firstItem="oVt-BR-XHM" firstAttribute="trailing" secondItem="0bS-1H-q6e" secondAttribute="trailing" id="Rrk-eT-83R"/>
+                            <constraint firstItem="oVt-BR-XHM" firstAttribute="top" secondItem="ywY-iq-eAK" secondAttribute="top" id="bL5-4x-l8K"/>
+                            <constraint firstItem="ywY-iq-eAK" firstAttribute="bottom" secondItem="0bS-1H-q6e" secondAttribute="bottom" constant="22" id="hgr-h9-UrU"/>
                             <constraint firstItem="ywY-iq-eAK" firstAttribute="trailing" secondItem="0bS-1H-q6e" secondAttribute="trailing" id="iCl-ym-61l"/>
-                            <constraint firstItem="0bS-1H-q6e" firstAttribute="top" secondItem="gZU-GT-Cue" secondAttribute="top" constant="277" id="u4e-zT-hyf"/>
                             <constraint firstItem="0bS-1H-q6e" firstAttribute="leading" secondItem="gZU-GT-Cue" secondAttribute="leading" id="vHv-AS-jJ4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oE9-82-BfD"/>
                     <connections>
                         <outlet property="tableView" destination="0bS-1H-q6e" id="HSv-ij-7E3"/>
+                        <outlet property="webView" destination="oVt-BR-XHM" id="eIN-XS-5IA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vb-6g-5JM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -745,7 +760,7 @@
     <resources>
         <image name="character" width="36" height="36"/>
         <image name="episode" width="36" height="36"/>
-        <image name="episodeBar" width="384" height="156"/>
+        <image name="episodeBar" width="839" height="441"/>
         <image name="location" width="26" height="26"/>
         <image name="locationsBar" width="844" height="444"/>
         <image name="png2pdf" width="843" height="472"/>
