@@ -16,16 +16,20 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var paginationStackView: UIStackView!
     @IBOutlet weak var characterTitle: UILabel! {
         didSet {
-            characterTitle.font = UIFont(name: "Get Schwifty", size: 40.0)
+            characterTitle.font = UIFont(name: "Get Schwifty", size: UIScreen.main.bounds.size.width > 375 ? 40.0: 25.0)
         }
     }
 
-    let networkManager = NetworkManager()
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     var characters = [Character]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
     }
@@ -37,37 +41,15 @@ class CharacterViewController: UIViewController {
         }
     }
 
+    private let viewModel = CharacterViewModel()
+
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.view.backgroundColor = .mainBackgroundColor
-        makeCharacterRequest(name: "", page: "")
-
-        setUpSearchBar()
-
-    }
-
-    private func setUpSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-
-        let scb = searchController.searchBar
-        scb.tintColor = .rickAndMortyTitleBlue
-        scb.barTintColor = UIColor.white
-
-        if let textfield = scb.value(forKey: "searchField") as? UITextField {
-            textfield.textColor = UIColor.blue
-            if let backgroundview = textfield.subviews.first {
-
-                backgroundview.backgroundColor = UIColor.white
-                backgroundview.layer.cornerRadius = 10;
-                backgroundview.clipsToBounds = true;
-
-            }
-        }
+        bindViewModel()
+        viewModel.getCharacter(name: "", page: "")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,14 +63,6 @@ class CharacterViewController: UIViewController {
         }
     }
 
-    func makeCharacterRequest(name: String, page: String) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        networkManager.getCharacter(name: name, page: page) { characters, info in
-            self.characters = characters
-            self.info = info
-        }
-    }
-
     //MARK: Actions
     @IBAction func previousButtonPressed(_ sender: UIButton) {
         guard let previous = info?.previousPage() else {
@@ -96,7 +70,7 @@ class CharacterViewController: UIViewController {
         }
 
         if previous != "" {
-            makeCharacterRequest(name: "", page: previous)
+            viewModel.getCharacter(name: "", page: previous)
         }
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
@@ -105,7 +79,24 @@ class CharacterViewController: UIViewController {
         }
 
         if next != "" {
-            makeCharacterRequest(name: "", page: next)
+            viewModel.getCharacter(name: "", page: next)
+
+        }
+    }
+
+    //MARK: Bind ViewModel
+    private func bindViewModel() {
+        viewModel.startLoading = { [unowned self] in
+            self.loadingView.startLoading(inView: self.view)
+        }
+
+        viewModel.endLoading = { [unowned self] in
+            self.loadingView.stopLoading()
+        }
+
+        viewModel.showCharacters = { [unowned self] characters, info in
+            self.characters = characters
+            self.info = info
         }
     }
 }
@@ -141,7 +132,7 @@ extension CharacterViewController: UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else {
             return
         }
-        makeCharacterRequest(name: text, page: "")
+        viewModel.getCharacter(name: text, page: "")
         paginationHeightContraint.constant = text == "" ? 30.0 : 0.0
         paginationStackView.isHidden = text == "" ? false : true
     }
