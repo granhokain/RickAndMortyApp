@@ -6,7 +6,6 @@ Application developed in Swift that shows information about episodes and charact
 
 - [MVVM pattern](MVVM)
 - [Cocoapods](https://cocoapods.org/)
-- [Realm](https://realm.io/docs/swift/latest/)
 - [Moya](https://github.com/Moya/Moya)
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage)
 - [WebKit](https://developer.apple.com/documentation/webkit)
