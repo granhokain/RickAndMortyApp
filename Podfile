@@ -6,7 +6,6 @@ target 'RickAndMortyApp' do
   use_frameworks!
 
   # Pods for RickAndMortyApp
-    pod 'RealmSwift'
     pod 'Alamofire', '~> 4.0'
     pod 'Moya', '~> 11.0'
     pod 'RxSwift', '~> 4.0'
