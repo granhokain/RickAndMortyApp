@@ -33,8 +33,6 @@ extension RickRemoteDataSource: TargetType {
             return "/location"
         case .episode:
             return "/episode"
-        default:
-            return ""
         }
     }
     var method: Moya.Method {

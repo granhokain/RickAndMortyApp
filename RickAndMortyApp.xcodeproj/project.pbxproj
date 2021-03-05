@@ -353,6 +353,7 @@
 				TargetAttributes = {
 					A4D36DF125EEB02C006966B0 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -616,7 +617,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.rafael.martins.RickAndMortyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -636,7 +637,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.rafael.martins.RickAndMortyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

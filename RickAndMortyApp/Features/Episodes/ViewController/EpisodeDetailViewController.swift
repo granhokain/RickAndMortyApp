@@ -44,7 +44,7 @@ class EpisodeDetailViewController: UIViewController {
         getCharacters()
         getSeasonTrailer()
         self.view.backgroundColor = .mainColor
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.backgroundColor = .mainBackgroundColor
     }
